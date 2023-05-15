@@ -1,0 +1,57 @@
+@import "layout";
+
+.pw-loader {
+    $loader-color: #0073FF;
+    $loader-size: 12px;
+    $loader-time: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .row {
+        display: flex;
+    }
+
+    .arrow {
+        width: 0;
+        height: 0;
+        margin-left: -(calc($loader-size / 2));
+        margin-right: -(calc($loader-size / 2));
+        border-left: $loader-size solid transparent;
+        border-right: $loader-size solid transparent;
+        border-bottom: ($loader-size * 1.8) solid $loader-color;
+        animation: blink $loader-time + s infinite;
+        filter: drop-shadow(0 0 ($loader-size * 1.5) $loader-color);
+
+        &.down {
+            transform: rotate(180deg);
+        }
+
+        @for $i from 1 through 18 {
+            &.outer-#{$i} {
+                animation-delay: -(calc($loader-time / 18) * $i + s);
+            }
+        }
+
+        @for $i from 1 through 6 {
+            &.inner-#{$i} {
+                animation-delay: -(calc($loader-time / 6) * $i + s);
+            }
+        }
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 0.1;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.1;
+        }
+    }
+}
