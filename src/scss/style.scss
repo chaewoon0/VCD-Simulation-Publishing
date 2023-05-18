@@ -11,7 +11,7 @@
 	flex: none;
 	position: relative;
 	width: 300px;
-	border-right: 1px solid #EDEDEF;
+	border-right: 1px solid $color-border;
 
 	.vcd-logo {
 		display: flex;
@@ -78,7 +78,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	border-bottom: 1px solid #EDEDEF;
+	border-bottom: 1px solid $color-border;
 
 	.header_info {
 		display: flex;
@@ -205,6 +205,21 @@
 	padding: 32px;
 }
 
+.card_wrap {
+	display: flex;
+	align-items: stretch;
+	gap: 32px;
+
+	.card {
+		flex: 1;
+
+		&:first-child {
+			flex: none;
+			width: 640px;
+		}
+	}
+}
+
 .card {
 	background-color: #fff;
 	border-radius: 24px;
@@ -244,5 +259,97 @@
 }
 
 .video_list_area {
-	border-top: 1px solid #EDEDEF;
+	border-top: 1px solid $color-border;
+	padding: 24px;
+
+	.video_list {
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -16px;
+		gap: 16px 0;
+	}
+
+	.video_item {
+		width: calc(33.33333333% - 16px);
+		margin-right: 16px;
+		min-width: 0;
+	}
+
+	.video_item_btn {
+		width: 100%;
+		border-radius: 20px;
+		border: 1px solid $color-border;
+		overflow: hidden;
+		position: relative;
+		transition-duration: .15s;
+		transition-property: box-shadow;
+		transition-timing-function: cubic-bezier(.4,0,.2,1);
+
+		&:hover {
+			box-shadow: 0px 4px 6px -4px rgba(13,16,45,.1),0px 10px 15px -3px rgba(13,16,45,.1);
+		}
+	}
+
+	.video_item_num {
+		@include flex-xy-center;
+		text-align: center;
+		background-color: hsla(0,0%,62%,.4);
+		backdrop-filter: blur(10px);
+		height: 24px;
+		width: 24px;
+		border-radius: 50%;
+		position: absolute;
+		left: 12px;
+		top: 12px;
+		z-index: 1;
+		cursor: pointer;
+		color: #fff;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1;
+		white-space: nowrap;
+	}
+
+	.video_img_wrap {
+		height: 0;
+		padding-bottom: 56.25%;
+		position: relative;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			-o-object-fit: cover;
+			object-fit: cover;
+			-o-object-position: center;
+			object-position: center;
+		}
+	}
+
+	.video_info_wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding: 12px;
+	}
+
+	.video_info_item {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	.video_info_title {
+		color: $color-primary-v;
+		font-weight: 500;
+		flex: none;
+		white-space: nowrap;
+	}
+
+	.video_info_content {
+		color: $color-font;
+		font-weight: 500;
+		@include ellipsis(1);
+	}
 }
