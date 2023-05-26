@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('../htmlPartials/_head.html', {
+        "headTitle": "VCD Simulation"
+    })
+</head>
+
+
+<body>
+	<div class="vcd-layout">
+		@@include('../htmlPartials/_nav.html', {
+			"page": "list"
+		})
+		<div class="vcd-container">
+			@@include('../htmlPartials/_header.html')
+			<div class="vcd-content">
+				<div class="card_wrap">
+					<div class="card">
+						<div class="card_header">
+							<div class="card_title_wrap">
+								<div class="card_title">
+									Master
+								</div>
+							</div>
+						</div>
+						<div class="card_body">
+						    <label class="control control--checkbox">
+						        <input type="checkbox" checked="checked" />
+						        <div class="control__indicator"></div>
+						    </label>
+						    <label class="control control--checkbox">Second checkbox
+						        <input type="checkbox" />
+						        <div class="control__indicator"></div>
+						    </label>
+						    <label class="control control--checkbox">Disabled
+						        <input type="checkbox" disabled="disabled" />
+						        <div class="control__indicator"></div>
+						    </label>
+						    <label class="control control--checkbox">Disabled & checked
+						        <input type="checkbox" disabled="disabled" checked="checked" />
+						        <div class="control__indicator"></div>
+						    </label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@@include('../htmlPartials/_footer.html')
+</body>

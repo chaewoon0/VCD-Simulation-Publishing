@@ -14,6 +14,8 @@
 <meta property="og:image" content="">
 <meta property="og:description" content="VCD Simulation">
 
+<link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+
 <link rel="stylesheet" href="css/common.css" />
 <link rel="stylesheet" href="css/style.css" />
 
@@ -21,92 +23,97 @@
 
 
 <body>
+	<!-- load class toggle -->
 	<div class="vcd-layout">
 		<nav class="vcd-nav">
-			<div class="vcd-logo">
-				<img src="img/logo.svg" alt="">
-				<span>Video Copy Detection Simulation</span>
-			</div>
-			<ul class="vcd-navlist">
-				<li class="vcd-navitem active">
-					<button class="vcd-navbtn">
-						<svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M27.2448 12.1786C27.2442 12.178 27.2435 12.1774 27.2429 12.1767L15.8211 0.755371C15.3343 0.268311 14.687 0 13.9985 0C13.31 0 12.6627 0.268097 12.1756 0.755157L0.759825 12.1707C0.75598 12.1746 0.752134 12.1786 0.748289 12.1825C-0.251467 13.188 -0.249758 14.8195 0.753203 15.8224C1.21142 16.2809 1.81662 16.5464 2.46368 16.5742C2.48996 16.5767 2.51645 16.578 2.54315 16.578H2.99838V24.9834C2.99838 26.6467 4.35168 28 6.01538 28H10.4839C10.9368 28 11.3043 27.6328 11.3043 27.1797V20.5898C11.3043 19.8308 11.9216 19.2135 12.6806 19.2135H15.3163C16.0753 19.2135 16.6927 19.8308 16.6927 20.5898V27.1797C16.6927 27.6328 17.0599 28 17.513 28H21.9816C23.6453 28 24.9986 26.6467 24.9986 24.9834V16.578H25.4207C26.109 16.578 26.7563 16.3099 27.2435 15.8228C28.2476 14.8182 28.248 13.184 27.2448 12.1786Z"/>
-						</svg>
-						<span>시뮬레이터 홈</span>
-					</button>
-				</li>
-				<li class="vcd-navitem">
-					<button class="vcd-navbtn">
-						<svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M22.1667 1.16666H5.83333C2.61683 1.16666 0 3.78349 0 6.99999V21C0 24.2165 2.61683 26.8333 5.83333 26.8333H22.1667C25.3832 26.8333 28 24.2165 28 21V6.99999C28 3.78349 25.3832 1.16666 22.1667 1.16666ZM7.58333 21.5833C6.61733 21.5833 5.83333 20.7993 5.83333 19.8333C5.83333 18.8673 6.61733 18.0833 7.58333 18.0833C8.54933 18.0833 9.33333 18.8673 9.33333 19.8333C9.33333 20.7993 8.54933 21.5833 7.58333 21.5833ZM7.58333 15.75C6.61733 15.75 5.83333 14.966 5.83333 14C5.83333 13.034 6.61733 12.25 7.58333 12.25C8.54933 12.25 9.33333 13.034 9.33333 14C9.33333 14.966 8.54933 15.75 7.58333 15.75ZM7.58333 9.91666C6.61733 9.91666 5.83333 9.13266 5.83333 8.16666C5.83333 7.20066 6.61733 6.41666 7.58333 6.41666C8.54933 6.41666 9.33333 7.20066 9.33333 8.16666C9.33333 9.13266 8.54933 9.91666 7.58333 9.91666ZM21 21H12.8333C12.1893 21 11.6667 20.4773 11.6667 19.8333C11.6667 19.1893 12.1893 18.6667 12.8333 18.6667H21C21.644 18.6667 22.1667 19.1893 22.1667 19.8333C22.1667 20.4773 21.644 21 21 21ZM21 15.1667H12.8333C12.1893 15.1667 11.6667 14.644 11.6667 14C11.6667 13.356 12.1893 12.8333 12.8333 12.8333H21C21.644 12.8333 22.1667 13.356 22.1667 14C22.1667 14.644 21.644 15.1667 21 15.1667ZM21 9.33332H12.8333C12.1893 9.33332 11.6667 8.81066 11.6667 8.16666C11.6667 7.52266 12.1893 6.99999 12.8333 6.99999H21C21.644 6.99999 22.1667 7.52266 22.1667 8.16666C22.1667 8.81066 21.644 9.33332 21 9.33332Z"/>
-						</svg>
-						<span>비교/식별 리스트</span>
-					</button>
-				</li>
-				<li class="vcd-navitem">
-					<button class="vcd-navbtn">
-						<svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12.8727 14.4488V0C10.6717 0.180438 8.54449 0.878565 6.66437 2.03749C4.78424 3.19642 3.20441 4.78335 2.05364 6.66897C0.902858 8.55459 0.213688 10.6855 0.0422871 12.8882C-0.129114 15.0908 0.222105 17.3028 1.06732 19.3438C1.91254 21.3849 3.22784 23.1973 4.90603 24.6334C6.58423 26.0694 8.57783 27.0885 10.7244 27.6075C12.8709 28.1265 15.1097 28.1309 17.2582 27.6201C19.4068 27.1093 21.4043 26.098 23.088 24.6684L12.8727 14.4488Z"/>
-							<path d="M16.8607 15.1336L24.7397 23.0159C26.622 20.7932 27.762 18.037 28 15.1336H16.8607Z"/>
-							<path d="M28 12.7964H15.209V0C18.5091 0.275861 21.6047 1.71264 23.9464 4.05528C26.2881 6.39793 27.7242 9.49488 28 12.7964Z"/>
-						</svg>
-						<span>통계 화면</span>
-					</button>
-				</li>
-			</ul>
-		</nav>
+    <div class="vcd-logo">
+        <img src="img/logo.svg" alt="">
+        <span>Video Copy Detection Simulation</span>
+    </div>
+    <ul class="vcd-navlist">
+        <li class="vcd-navitem active">
+            <button class="vcd-navbtn" onclick="location.href='index.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.2448 12.1786C27.2442 12.178 27.2435 12.1774 27.2429 12.1767L15.8211 0.755371C15.3343 0.268311 14.687 0 13.9985 0C13.31 0 12.6627 0.268097 12.1756 0.755157L0.759825 12.1707C0.75598 12.1746 0.752134 12.1786 0.748289 12.1825C-0.251467 13.188 -0.249758 14.8195 0.753203 15.8224C1.21142 16.2809 1.81662 16.5464 2.46368 16.5742C2.48996 16.5767 2.51645 16.578 2.54315 16.578H2.99838V24.9834C2.99838 26.6467 4.35168 28 6.01538 28H10.4839C10.9368 28 11.3043 27.6328 11.3043 27.1797V20.5898C11.3043 19.8308 11.9216 19.2135 12.6806 19.2135H15.3163C16.0753 19.2135 16.6927 19.8308 16.6927 20.5898V27.1797C16.6927 27.6328 17.0599 28 17.513 28H21.9816C23.6453 28 24.9986 26.6467 24.9986 24.9834V16.578H25.4207C26.109 16.578 26.7563 16.3099 27.2435 15.8228C28.2476 14.8182 28.248 13.184 27.2448 12.1786Z"/>
+                </svg>
+                <span>시뮬레이터 홈</span>
+            </button>
+        </li>
+        <li class="vcd-navitem ">
+            <button class="vcd-navbtn" onclick="location.href='list.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.1667 1.16666H5.83333C2.61683 1.16666 0 3.78349 0 6.99999V21C0 24.2165 2.61683 26.8333 5.83333 26.8333H22.1667C25.3832 26.8333 28 24.2165 28 21V6.99999C28 3.78349 25.3832 1.16666 22.1667 1.16666ZM7.58333 21.5833C6.61733 21.5833 5.83333 20.7993 5.83333 19.8333C5.83333 18.8673 6.61733 18.0833 7.58333 18.0833C8.54933 18.0833 9.33333 18.8673 9.33333 19.8333C9.33333 20.7993 8.54933 21.5833 7.58333 21.5833ZM7.58333 15.75C6.61733 15.75 5.83333 14.966 5.83333 14C5.83333 13.034 6.61733 12.25 7.58333 12.25C8.54933 12.25 9.33333 13.034 9.33333 14C9.33333 14.966 8.54933 15.75 7.58333 15.75ZM7.58333 9.91666C6.61733 9.91666 5.83333 9.13266 5.83333 8.16666C5.83333 7.20066 6.61733 6.41666 7.58333 6.41666C8.54933 6.41666 9.33333 7.20066 9.33333 8.16666C9.33333 9.13266 8.54933 9.91666 7.58333 9.91666ZM21 21H12.8333C12.1893 21 11.6667 20.4773 11.6667 19.8333C11.6667 19.1893 12.1893 18.6667 12.8333 18.6667H21C21.644 18.6667 22.1667 19.1893 22.1667 19.8333C22.1667 20.4773 21.644 21 21 21ZM21 15.1667H12.8333C12.1893 15.1667 11.6667 14.644 11.6667 14C11.6667 13.356 12.1893 12.8333 12.8333 12.8333H21C21.644 12.8333 22.1667 13.356 22.1667 14C22.1667 14.644 21.644 15.1667 21 15.1667ZM21 9.33332H12.8333C12.1893 9.33332 11.6667 8.81066 11.6667 8.16666C11.6667 7.52266 12.1893 6.99999 12.8333 6.99999H21C21.644 6.99999 22.1667 7.52266 22.1667 8.16666C22.1667 8.81066 21.644 9.33332 21 9.33332Z"/>
+                </svg>
+                <span>비교/식별 리스트</span>
+            </button>
+        </li>
+        <li class="vcd-navitem ">
+            <button class="vcd-navbtn" onclick="location.href='stat.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.8727 14.4488V0C10.6717 0.180438 8.54449 0.878565 6.66437 2.03749C4.78424 3.19642 3.20441 4.78335 2.05364 6.66897C0.902858 8.55459 0.213688 10.6855 0.0422871 12.8882C-0.129114 15.0908 0.222105 17.3028 1.06732 19.3438C1.91254 21.3849 3.22784 23.1973 4.90603 24.6334C6.58423 26.0694 8.57783 27.0885 10.7244 27.6075C12.8709 28.1265 15.1097 28.1309 17.2582 27.6201C19.4068 27.1093 21.4043 26.098 23.088 24.6684L12.8727 14.4488Z"/>
+                    <path d="M16.8607 15.1336L24.7397 23.0159C26.622 20.7932 27.762 18.037 28 15.1336H16.8607Z"/>
+                    <path d="M28 12.7964H15.209V0C18.5091 0.275861 21.6047 1.71264 23.9464 4.05528C26.2881 6.39793 27.7242 9.49488 28 12.7964Z"/>
+                </svg>
+                <span>통계 화면</span>
+            </button>
+        </li>
+    </ul>
+    <div class="copyright">
+        Digicap. All rights reserved.
+    </div>
+</nav>
 		<div class="vcd-container">
 			<header class="vcd-header">
-				<div class="header_info">
-					<div class="header_info_item">
-						<h1>VCDD 상태 :</h1>
-						<span class="state_0">정상</span>
-					</div>
-					<div class="header_info_item">
-						<h1>서비스 시작 :</h1>
-						<span>2023-04-19 11:07</span>
-					</div>
-				</div>
-				<div class="header_usage">
-					<div class="header_usage_item">
-						<h1>CPU</h1>
-						<span class="state_0">15%</span>
-					</div>
-					<div class="header_usage_item">
-						<h1>GPU</h1>
-						<span class="state_0">32%</span>
-					</div>
-					<div class="header_usage_item">
-						<h1>MEM</h1>
-						<span class="state_1">65%</span>
-					</div>
-					<div class="header_usage_item">
-						<h1>DISK</h1>
-						<span class="state_2">85%</span>
-					</div>
-				</div>
-			</header>
+    <div class="header_info">
+        <div class="header_info_item">
+            <h1>VCDD 상태 :</h1>
+            <span class="state_0">정상</span>
+        </div>
+        <div class="header_info_item">
+            <h1>서비스 시작 :</h1>
+            <span id="clock">2023-04-19 11:07</span>
+        </div>
+    </div>
+    <div class="header_usage">
+        <div class="header_usage_item">
+            <h1>CPU</h1>
+            <span class="state_0">15%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>GPU</h1>
+            <span class="state_0">32%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>MEM</h1>
+            <span class="state_1">65%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>DISK</h1>
+            <span class="state_2">85%</span>
+        </div>
+    </div>
+</header>
 			<div class="vcd-content">
 				<div class="card_wrap">
 					<div class="card">
-						<div class="card_title_wrap">
-							<div class="card_title">
-								동영상 리스트
-							</div>
-						</div>
-						<div class="card_body">
-							<button class="video_list_top_btn">
-								<div class="localhost">
-									localhost
+						<div class="card_header">
+							<div class="card_title_wrap">
+								<div class="card_title">
+									동영상 리스트
 								</div>
-								<div class="path_wrap">
-									<span class="path">/etc/host/samples/</span>
+							</div>
+							<button class="video_list_top_btn">
+								<span>
+									로컬호스트
+								</span>
+								<div class="btn_text_wrap">
 									<svg width="11" height="9" viewBox="0 0 11 9" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 										<path d="M5.5 9L0 0L11 0L5.5 9Z"/>
 									</svg>
 								</div>
 							</button>
+						</div>
+						<div class="card_body">
 							<div class="video_list_area">
 								<ul class="video_list">
 									<li class="video_item">
@@ -415,75 +422,284 @@
 											</div>
 										</button>
 									</li>
-									<li class="video_item">
-										<button class="video_item_btn">
-											<div class="video_item_num">10</div>
-											<div class="video_img_wrap">
-												<img src="img/sample.png" alt="">
-											</div>
-											<div class="video_info_wrap">
-												<div class="video_info_item">
-													<div class="video_info_title">
-														파일 이름 :
-													</div>
-													<div class="video_info_content">
-														video_1
-													</div>
-												</div>
-												<div class="video_info_item">
-													<div class="video_info_title">
-														파일 형식 :
-													</div>
-													<div class="video_info_content">
-														avi
-													</div>
-												</div>
-												<div class="video_info_item">
-													<div class="video_info_title">
-														영상 시간 :
-													</div>
-													<div class="video_info_content">
-														00:00:32
-													</div>
-												</div>
-											</div>
-										</button>
-									</li>
-									<li class="video_item">
-										<button class="video_item_btn">
-											<div class="video_item_num">11</div>
-											<div class="video_img_wrap">
-												<img src="img/sample.png" alt="">
-											</div>
-											<div class="video_info_wrap">
-												<div class="video_info_item">
-													<div class="video_info_title">
-														파일 이름 :
-													</div>
-													<div class="video_info_content">
-														video_1
-													</div>
-												</div>
-												<div class="video_info_item">
-													<div class="video_info_title">
-														파일 형식 :
-													</div>
-													<div class="video_info_content">
-														avi
-													</div>
-												</div>
-												<div class="video_info_item">
-													<div class="video_info_title">
-														영상 시간 :
-													</div>
-													<div class="video_info_content">
-														00:00:32
-													</div>
-												</div>
-											</div>
-										</button>
-									</li>
 								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card_header">
+							<div class="card_title_wrap">
+								<div class="card_title">
+									비교/식별 리스트
+								</div>
+								<button class="solid_btn primary_btn">
+									<svg width="9" height="11" fill="currentColor" viewBox="0 0 9 11">
+										<path d="M9 5.5 0 11V0l9 5.5Z"/>
+									</svg>
+									<span>분석 시작</span>
+								</button>
+							</div>
+							<div class="table_head_row">
+								<div class="table_cell col_1">
+									<span>번호</span>
+								</div>
+								<div class="table_cell col_5">
+									<span>썸네일</span>
+								</div>
+								<div class="table_cell col_auto">
+									<span>제목</span>
+								</div>
+								<div class="table_cell col_2">
+									<span>영상 시간</span>
+								</div>
+								<div class="table_cell col_3">
+									<span>추출/검색 시간</span>
+								</div>
+								<div class="table_cell col_3">
+									<span>비고</span>
+								</div>
+								<div class="table_cell col_2">
+									<span>분석 상태</span>
+								</div>
+							</div>
+						</div>
+						<div class="card_body">
+							<div class="table_container">
+								<!-- table_empty class toggle -->
+								<div class="table_empry_wrap">
+									<img src="img/list_empty.svg" alt="">
+									<p>분석을 위해 <strong>동영상 리스트</strong>에서 영상을 넣어주세요.</p>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_1">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="M8.985 18.429 13 14.414l4.015 4.015 1.414-1.414L14.414 13l4.016-4.015-1.415-1.414L13 11.586 8.985 7.571 7.571 8.985 11.586 13l-4.015 4.015 1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 실패</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap">
+											<svg width="26" height="26" fill="#2380EA" viewBox="0 0 27 26">
+												<path d="M25.993 14.622C25.185 21.11 19.62 26 13.045 26 5.852 26 0 20.169 0 13S5.852 0 13.045 0c2.855 0 5.595.936 7.827 2.618V1.114C20.872.5 21.372 0 21.99 0c.617 0 1.118.5 1.118 1.114v4.532c0 .615-.5 1.114-1.118 1.114h-4.473c-.617 0-1.118-.5-1.118-1.114 0-.615.501-1.115 1.118-1.115h2.171a10.75 10.75 0 0 0-6.643-2.302C7.085 2.229 2.236 7.06 2.236 13s4.848 10.771 10.809 10.771c5.446 0 10.059-4.051 10.728-9.422a1.108 1.108 0 0 1 1.248-.969c.613.076 1.048.632.972 1.242Z"/>
+											</svg>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
+								<div class="table_row">
+									<div class="table_cell col_1">
+										<span>13465</span>
+									</div>
+									<div class="table_cell col_5">
+										<img class="thumbnail" src="img/sample.png" alt="">
+									</div>
+									<div class="table_cell col_auto">
+										<span>video_1.avivideo_1.avivideo_1.avivideo_1.avi</span>
+									</div>
+									<div class="table_cell col_2">
+										<span>00:00:32</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>3.8s</span>
+									</div>
+									<div class="table_cell col_3">
+										<span>-</span>
+									</div>
+									<div class="table_cell col_2">
+										<div class="state_wrap state_0">
+											<svg width="26" height="26" fill="currentColor" viewBox="0 0 26 26">
+												<path d="m5.743 13.077 5.491 5.491 9.014-9.014-1.414-1.414-7.6 7.6-4.077-4.077-1.414 1.414Z"/>
+												<path d="M13 0C5.82 0 0 5.82 0 13s5.82 13 13 13 13-5.82 13-13S20.18 0 13 0ZM2 13C2 6.925 6.925 2 13 2s11 4.925 11 11-4.925 11-11 11S2 19.075 2 13Z"/>
+											</svg>
+											<span>분석 완료</span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -491,4 +707,41 @@
 			</div>
 		</div>
 	</div>
+	<div class="loader_container">
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="loader_text">
+        <p><strong>VCD 분석 중</strong>입니다. 잠시만 기다려주세요.</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+<script src="js/common.js"></script>
 </body>

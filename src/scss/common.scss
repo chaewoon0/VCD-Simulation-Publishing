@@ -1,3 +1,5 @@
+@import "layout";
+
 @font-face {
     font-family: 'Pretendard Variable';
     font-weight: 45 920;
@@ -87,13 +89,9 @@ html {
     color: inherit;
 }
 
-body,
-.bodyBox {
-    height: 100%;
-}
-
 body {
     -webkit-font-smoothing: antialiased;
+    height: 100%;
 }
 
 canvas,

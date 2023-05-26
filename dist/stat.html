@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>VCD Simulation</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+
+<meta property="og:url" content="">
+<meta property="og:title" content="VCD Simulation">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:description" content="VCD Simulation">
+
+<link href="https://vjs.zencdn.net/8.3.0/video-js.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+
+<body>
+	<div class="vcd-layout">
+		<nav class="vcd-nav">
+    <div class="vcd-logo">
+        <img src="img/logo.svg" alt="">
+        <span>Video Copy Detection Simulation</span>
+    </div>
+    <ul class="vcd-navlist">
+        <li class="vcd-navitem ">
+            <button class="vcd-navbtn" onclick="location.href='index.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27.2448 12.1786C27.2442 12.178 27.2435 12.1774 27.2429 12.1767L15.8211 0.755371C15.3343 0.268311 14.687 0 13.9985 0C13.31 0 12.6627 0.268097 12.1756 0.755157L0.759825 12.1707C0.75598 12.1746 0.752134 12.1786 0.748289 12.1825C-0.251467 13.188 -0.249758 14.8195 0.753203 15.8224C1.21142 16.2809 1.81662 16.5464 2.46368 16.5742C2.48996 16.5767 2.51645 16.578 2.54315 16.578H2.99838V24.9834C2.99838 26.6467 4.35168 28 6.01538 28H10.4839C10.9368 28 11.3043 27.6328 11.3043 27.1797V20.5898C11.3043 19.8308 11.9216 19.2135 12.6806 19.2135H15.3163C16.0753 19.2135 16.6927 19.8308 16.6927 20.5898V27.1797C16.6927 27.6328 17.0599 28 17.513 28H21.9816C23.6453 28 24.9986 26.6467 24.9986 24.9834V16.578H25.4207C26.109 16.578 26.7563 16.3099 27.2435 15.8228C28.2476 14.8182 28.248 13.184 27.2448 12.1786Z"/>
+                </svg>
+                <span>시뮬레이터 홈</span>
+            </button>
+        </li>
+        <li class="vcd-navitem ">
+            <button class="vcd-navbtn" onclick="location.href='list.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.1667 1.16666H5.83333C2.61683 1.16666 0 3.78349 0 6.99999V21C0 24.2165 2.61683 26.8333 5.83333 26.8333H22.1667C25.3832 26.8333 28 24.2165 28 21V6.99999C28 3.78349 25.3832 1.16666 22.1667 1.16666ZM7.58333 21.5833C6.61733 21.5833 5.83333 20.7993 5.83333 19.8333C5.83333 18.8673 6.61733 18.0833 7.58333 18.0833C8.54933 18.0833 9.33333 18.8673 9.33333 19.8333C9.33333 20.7993 8.54933 21.5833 7.58333 21.5833ZM7.58333 15.75C6.61733 15.75 5.83333 14.966 5.83333 14C5.83333 13.034 6.61733 12.25 7.58333 12.25C8.54933 12.25 9.33333 13.034 9.33333 14C9.33333 14.966 8.54933 15.75 7.58333 15.75ZM7.58333 9.91666C6.61733 9.91666 5.83333 9.13266 5.83333 8.16666C5.83333 7.20066 6.61733 6.41666 7.58333 6.41666C8.54933 6.41666 9.33333 7.20066 9.33333 8.16666C9.33333 9.13266 8.54933 9.91666 7.58333 9.91666ZM21 21H12.8333C12.1893 21 11.6667 20.4773 11.6667 19.8333C11.6667 19.1893 12.1893 18.6667 12.8333 18.6667H21C21.644 18.6667 22.1667 19.1893 22.1667 19.8333C22.1667 20.4773 21.644 21 21 21ZM21 15.1667H12.8333C12.1893 15.1667 11.6667 14.644 11.6667 14C11.6667 13.356 12.1893 12.8333 12.8333 12.8333H21C21.644 12.8333 22.1667 13.356 22.1667 14C22.1667 14.644 21.644 15.1667 21 15.1667ZM21 9.33332H12.8333C12.1893 9.33332 11.6667 8.81066 11.6667 8.16666C11.6667 7.52266 12.1893 6.99999 12.8333 6.99999H21C21.644 6.99999 22.1667 7.52266 22.1667 8.16666C22.1667 8.81066 21.644 9.33332 21 9.33332Z"/>
+                </svg>
+                <span>비교/식별 리스트</span>
+            </button>
+        </li>
+        <li class="vcd-navitem active">
+            <button class="vcd-navbtn" onclick="location.href='stat.html'">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.8727 14.4488V0C10.6717 0.180438 8.54449 0.878565 6.66437 2.03749C4.78424 3.19642 3.20441 4.78335 2.05364 6.66897C0.902858 8.55459 0.213688 10.6855 0.0422871 12.8882C-0.129114 15.0908 0.222105 17.3028 1.06732 19.3438C1.91254 21.3849 3.22784 23.1973 4.90603 24.6334C6.58423 26.0694 8.57783 27.0885 10.7244 27.6075C12.8709 28.1265 15.1097 28.1309 17.2582 27.6201C19.4068 27.1093 21.4043 26.098 23.088 24.6684L12.8727 14.4488Z"/>
+                    <path d="M16.8607 15.1336L24.7397 23.0159C26.622 20.7932 27.762 18.037 28 15.1336H16.8607Z"/>
+                    <path d="M28 12.7964H15.209V0C18.5091 0.275861 21.6047 1.71264 23.9464 4.05528C26.2881 6.39793 27.7242 9.49488 28 12.7964Z"/>
+                </svg>
+                <span>통계 화면</span>
+            </button>
+        </li>
+    </ul>
+    <div class="copyright">
+        Digicap. All rights reserved.
+    </div>
+</nav>
+		<div class="vcd-container">
+			<header class="vcd-header">
+    <div class="header_info">
+        <div class="header_info_item">
+            <h1>VCDD 상태 :</h1>
+            <span class="state_0">정상</span>
+        </div>
+        <div class="header_info_item">
+            <h1>서비스 시작 :</h1>
+            <span id="clock">2023-04-19 11:07</span>
+        </div>
+    </div>
+    <div class="header_usage">
+        <div class="header_usage_item">
+            <h1>CPU</h1>
+            <span class="state_0">15%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>GPU</h1>
+            <span class="state_0">32%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>MEM</h1>
+            <span class="state_1">65%</span>
+        </div>
+        <div class="header_usage_item">
+            <h1>DISK</h1>
+            <span class="state_2">85%</span>
+        </div>
+    </div>
+</header>
+			<div class="vcd-content">
+				<div class="card_wrap">
+					<div class="card">
+						<div class="card_header">
+							<div class="card_title_wrap">
+								<div class="card_title">
+									VCD 검출 현황
+								</div>
+                                <div class="filter_wrap">
+                                    <div class="filter_dropdown">
+                                        <button class="dropdown_btn">
+                                            <span class="dropdown_btn_valueContainer">
+                                                <span class="dropdown_btn_valueIcon">
+                                                    <svg width="12" height="12" fill="currentColor" viewBox="0 0 12 12">
+                                                        <path d="M10.5 1H9V0H7.5v1h-3V0H3v1H1.5A1.5 1.5 0 0 0 0 2.5V12h12V2.5A1.5 1.5 0 0 0 10.5 1Zm-9 9.5V5h9v5.5h-9Z"/>
+                                                    </svg>
+                                                </span>
+                                                <span class="filter_value_container">
+                                                    <span class="filter_value_valueContainer">
+                                                        <span class="filter_value_valueText hidden">날짜</span>
+                                                    </span>
+                                                    <span class="filter_value_iconContainer">
+                                                        <svg width="7" height="4" fill="currentColor" viewBox="0 0 7 4">
+                                                            <path d="M3.5 4 0 0h7L3.5 4Z"/>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+    
+                                            <div class="dropdown_btn_borderContainer">
+                                                <div class="dropdown_btn_border dropdown_btn_leading"></div>
+                                                <div class="dropdown_btn_border dropdown_btn_notch">
+                                                    <span class="dropdown_btn_filterLabel">날짜</span>
+                                                </div>
+                                                <div class="dropdown_btn_border dropdown_btn_trailing"></div>
+                                            </div>
+                                        </button>
+    
+                                        <div class="filter_dropdown_content">
+                                            <ul class="filter_dropdown_list">
+                                                <li class="filter_dropdown_item">
+                                                    전체 날짜
+                                                </li>
+                                                <li class="filter_dropdown_item">
+                                                    일
+                                                </li>
+                                                <li class="filter_dropdown_item">
+                                                    월
+                                                </li>
+                                                <li class="filter_dropdown_item">
+                                                    년
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+							</div>
+						</div>
+						<div class="card_body">
+							<div class="chart_area">
+                                chart
+                            </div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card_header">
+							<div class="card_title_wrap">
+								<div class="card_title">
+									VCD 서버 모니터링
+								</div>
+							</div>
+						</div>
+						<div class="card_body">
+							<div class="form_inner">
+                                <div class="vcd-input">
+                                    <label for="input_01" class="vcd-input__label">VCDS 버전</label>
+                                    <input type="text" id="input_01" class="vcd-input__input" autocomplete="off" value="1.0.3" readonly>
+                                </div>
+                                <div class="vcd-input">
+                                    <label for="input_02" class="vcd-input__label">VCDC 버전</label>
+                                    <input type="text" id="input_02" class="vcd-input__input" autocomplete="off" value="1.0.4" readonly>
+                                </div>
+                                <div class="vcd-input">
+                                    <label for="input_03" class="vcd-input__label">VCDS 수신 포트</label>
+                                    <input type="text" id="input_03" class="vcd-input__input" autocomplete="off" value="127.0.0.1:10000" readonly>
+                                </div>
+                                <div class="vcd-input">
+                                    <label for="input_04" class="vcd-input__label">DNA-DB 경로</label>
+                                    <input type="text" id="input_04" class="vcd-input__input" autocomplete="off" value="/mnt/vcd/dna-db" readonly>
+                                </div>
+                                <div class="vcd-input">
+                                    <label for="input_05" class="vcd-input__label">VCDS 송신 포트</label>
+                                    <input type="text" id="input_05" class="vcd-input__input" autocomplete="off" value="127.0.0.1:20000" readonly>
+                                </div>
+                                <div class="vcd-input">
+                                    <label for="input_06" class="vcd-input__label">VCD 환경설정</label>
+                                    <input type="text" id="input_06" class="vcd-input__input" autocomplete="off" value="/mnt/vcd/config_GPU.ini" readonly>
+                                </div>
+                            </div>
+                            <div class="chart_area">
+                                chart
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="loader_container">
+    <div class="loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="loader_text">
+        <p><strong>VCD 분석 중</strong>입니다. 잠시만 기다려주세요.</p>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://vjs.zencdn.net/8.3.0/video.min.js"></script>
+<script src="js/common.js"></script>
+</body>
