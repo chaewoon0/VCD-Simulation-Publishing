@@ -119,6 +119,51 @@ body {
 	width: 300px;
 	border-right: 1px solid $color-border;
 
+	&.fold {
+		width: 100px;
+
+		.vcd-logo {
+			padding-left: 12px;
+			padding-right: 12px;
+			padding-bottom: 40px;
+			
+			img {
+				content: url(../img/logo_fold.svg);
+			}
+	
+			span {
+				display: none;
+			}
+		}
+
+		.vcd-navlist {
+			padding-left: 12px;
+			padding-right: 12px;
+	
+			.vcd-navbtn {
+				padding: 0;
+				justify-content: center;
+	
+				span {
+					display: none;
+				}
+			}
+		}
+
+		.copyright {
+			display: none;
+		}
+
+		.nav-fold-btn {
+			right: 12px;
+			width: calc(100% - 24px);
+	
+			svg {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+
 	.vcd-logo {
 		display: flex;
 		flex-direction: column;
@@ -178,13 +223,28 @@ body {
 		font-size: 14px;
 		white-space: nowrap;
 	}
+
+	.nav-fold-btn {
+		position: absolute;
+		color: $color-primary-v;
+		right: 24px;
+		bottom: 40px;
+		width: 40px;
+		height: 24px;
+		@include flex-xy-center;
+
+		svg {
+			width: 20px;
+			flex: none;
+		}
+	}
 }
 
 .vcd-container {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	overflow-x: overlay;
+	overflow-x: auto;
 }
 
 .vcd-header {
@@ -362,7 +422,7 @@ body {
 	.card_body {
 		flex: 1;
 		background-color: #fff;
-		overflow: overlay;
+		overflow-y: auto;
 		border-radius: 0 0 24px 24px;
 	}
 
@@ -428,6 +488,7 @@ body {
 		width: calc(33.33333333% - 16px);
 		margin-right: 16px;
 		min-width: 0;
+		z-index: 2;
 	}
 
 	.video_item_btn {
@@ -436,6 +497,7 @@ body {
 		border: 1px solid $color-border;
 		overflow: hidden;
 		position: relative;
+		background-color: #fff;
 		transition-duration: .15s;
 		transition-property: box-shadow;
 		transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -520,20 +582,21 @@ body {
 .table_container {
 	display: flex;
 	flex-direction: column;
+	border-radius: inherit;
 
-	&.table_empty {
-		.table_row {
-			display: none;
-		}
+	&.ui-droppable-active {
+		outline: 1px dashed #c4c4c8;
+		outline-offset: -1px;
 
-		.table_empry_wrap {
-			display: flex;
+		&.ui-state-hover {
+			outline-color: #007aff;
+			background-color: #f5faff;
 		}
 	}
 }
 
-.table_empry_wrap {
-	display: none;
+.table_empty_wrap {
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
@@ -561,11 +624,18 @@ body {
 	padding: 12px 24px;
 	gap: 12px;
 	justify-content: space-between;
-	border-bottom: 1px solid $color-border;
 	cursor: pointer;
 
 	&:hover {
 		background-color: #F4F5F6;
+	}
+
+	& + .table_empty_wrap {
+		display: none;
+	}
+
+	& + .table_row {
+		border-top: 1px solid $color-border;
 	}
 }
 
@@ -813,6 +883,7 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,.2);
     margin-top: 3px;
     position: absolute;
+	z-index: 2;
 	visibility: hidden;
 
 	&.active {
@@ -1164,7 +1235,6 @@ body {
 	flex-wrap: wrap;
 	gap: 24px;
 	padding: 24px;
-	border-bottom: 1px solid $color-border;
 
 	.vcd-input {
 		width: calc(50% - 12px);
@@ -1211,7 +1281,9 @@ body {
 }
 
 .chart_area {
-	padding: 24px;
+	&:last-child {
+		border-top: 1px solid $color-border;
+	}
 }
 
 .loader_container {

@@ -72,10 +72,21 @@
                                     </div>
                                 </div>
 							</div>
+                            <div class="table_head_row">
+                                <div class="table_cell">
+                                    <span>총 응답: 400</span>
+                                </div>
+                                <div class="table_cell">
+                                    <span>기간: 2023.04.05 ~ 2023.05.04</span>
+                                </div>
+                            </div>
 						</div>
 						<div class="card_body">
 							<div class="chart_area">
-                                chart
+                                <div id="chart01"></div>
+                            </div>
+							<div class="chart_area">
+                                <div id="chart02"></div>
                             </div>
 						</div>
 					</div>
@@ -115,7 +126,7 @@
                                 </div>
                             </div>
                             <div class="chart_area">
-                                chart
+                                <div id="chart03"></div>
                             </div>
 						</div>
 					</div>
@@ -124,4 +135,174 @@
 		</div>
 	</div>
 	@@include('../htmlPartials/_footer.html')
+
+    <script>
+        var chart01 = bb.generate({
+            legend: {
+                position: "inset",
+                inset: {
+                    anchor: "top-right",
+                },
+                item: {
+                    tile: {
+                        type: "circle",
+                        r: 7
+                    }
+                }
+            },
+            padding: {
+                top: 12,
+                bottom: 12,
+                right: 24,
+                left: 24,
+                unit: "px"
+            },
+            data: {
+                columns: [
+                    ["검출", 184],
+                    ["미검출", 216],
+                ],
+                type: "pie",
+                colors: {
+                    검출: "rgba(243, 114, 44, 0.8)",
+                    미검출: "rgba(249, 65, 68, 0.8)",
+                },
+            },
+            pie: {
+                expand: {
+                    rate: 1.007
+                },
+                label: {
+                    format: function (value, ratio, id) {
+                        return value;
+                    }
+                }
+            },
+            bindto: "#chart01"
+        });
+
+
+        var chart02 = bb.generate({
+            legend: {
+                position: "inset",
+                inset: {
+                    anchor: "top-right",
+                },
+                item: {
+                    tile: {
+                        type: "circle",
+                        r: 7
+                    }
+                }
+            },
+            padding: {
+                top: 24,
+                bottom: 24,
+                right: 36,
+                left: 48,
+                unit: "px"
+            },
+            data: {
+                x: "x",
+                columns: [
+                    ["x", "2023-04-05", "2023-04-09", "2023-04-13", "2023-04-17", "2023-04-21", "2023-04-25", "2023-04-29", "2023-05-03"],
+                    ["검출", 125, 100, 50, 75, 150, 200, 150, 50, 25],
+                    ["미검출", 100, 150, 225, 125, 75, 125, 25, 150, 200],
+                ],
+                type: "area-spline",
+                colors: {
+                    검출: "#F3722C",
+                    미검출: "#F94144",
+                },
+            },
+            axis: {
+                x: {
+                    type: "timeseries",
+                    tick: {
+                        format: "%y.%m.%d"
+                    },
+                },
+                y: {
+                    tick: {
+                        stepSize: 25
+                    }
+                },
+            },
+            grid: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: true
+                },
+            },
+            area: {
+                linearGradient: true
+            },
+            bindto: "#chart02"
+        });
+
+
+        var chart03 = bb.generate({
+            legend: {
+                position: "bottom",
+                item: {
+                    tile: {
+                        type: "circle",
+                        r: 7
+                    }
+                }
+            },
+            padding: {
+                top: 24,
+                bottom: 24,
+                right: 36,
+                left: 48,
+                unit: "px"
+            },
+            data: {
+                x: "x",
+                columns: [
+                    ["x", "2023-04-01", "2023-04-09", "2023-04-17", "2023-04-25", "2023-05-03"],
+                    ["CPU", 12.2, 9.1, 7.2, 7.8, 5],
+                    ["GPU", 2.2, 0.8, 3.1, 6.4, 2.5],
+                    ["MEM", 2.5, 4.1, 5.4, 6.1, 7.5],
+                    ["DISK", 5.1, 8.2, 10.1, 9.3, 12.4],
+                ],
+                type: "spline",
+                colors: {
+                    CPU: "#F94144",
+                    GPU: "#F3722C",
+                    MEM: "#F8961E",
+                    DISK: "#90BE6D",
+                },
+            },
+            tooltip: {
+                grouped: false
+            },
+            axis: {
+                x: {
+                    type: "timeseries",
+                    tick: {
+                        format: "%y.%m.%d"
+                    },
+                },
+                y: {
+                    tick: {
+                        stepSize: 2
+                    }
+                },
+            },
+            grid: {
+                x: {
+                    show: true
+                },
+                y: {
+                    show: true
+                },
+            },
+            bindto: "#chart03"
+        });
+    </script>
 </body>
+</html>
